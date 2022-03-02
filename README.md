@@ -17,7 +17,7 @@ For Student Id : 1
 
 JSON response for both endpoints -
 
-```mermaid
+```
 {
   "name": "1",
   "id": "Rohan Gupta",
