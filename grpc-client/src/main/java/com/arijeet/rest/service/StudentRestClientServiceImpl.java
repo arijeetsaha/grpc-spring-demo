@@ -2,7 +2,6 @@ package com.arijeet.rest.service;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.util.SerializationUtils;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.arijeet.grpc.client.resource.AddressResource;
@@ -28,7 +27,6 @@ public class StudentRestClientServiceImpl implements StudentRestClientService{
     }
 
     private StudentResource mapper( Student student) {
-        log.info("Size of the REST object in bytes: {}", SerializationUtils.serialize(student).length);
         Address address = student.getAddress();
         AddressResource addressResource = new AddressResource(address.getAddressLine1(), address.getAddressLine2(),
                 address.getCity(), address.getCountry(), address.getPinCode());

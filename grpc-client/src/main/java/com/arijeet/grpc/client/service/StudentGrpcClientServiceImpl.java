@@ -23,7 +23,7 @@ public class StudentGrpcClientServiceImpl implements StudentGrpcClientService{
         Student student = studentServiceBlockingStub.getStudentDetails(StudentSearchRequest.newBuilder()
                 .setStudentId(studentId)
                 .build());
-        log.info("Size of the PROTOBUF message size: {}", student.toByteArray().length);
+        //log.info("Size of the PROTOBUF message size: {}", student.toByteArray().length);
         Address address = student.getAddress();
         AddressResource addressResource = new AddressResource(address.getAddressLine1(), address.getAddressLine2(),
                 address.getCity(), address.getCountry(), address.getPinCode());

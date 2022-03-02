@@ -15,14 +15,14 @@ public class StudentServerService extends StudentServiceGrpc.StudentServiceImplB
     public void getStudentDetails(StudentSearchRequest request, StreamObserver<Student> responseObserver) {
         Student student = Student.newBuilder().setStudentId(request.getStudentId())
                 .setAddress(com.arijeet.grpc.proto.Address.newBuilder()
-                        .setAddressLine1("A-82 Sector 2C")
-                        .setAddressLine2("Bidhannagar")
-                        .setCity("Durgapur")
+                        .setAddressLine1("A-508 Embassy Golf Club")
+                        .setAddressLine2("Marathahalli")
+                        .setCity("Bengaluru")
                         .setCountry("India")
-                        .setPinCode(713212)
+                        .setPinCode(560200)
                         .build())
                 .setStudentType(StudentType.STUDENT_TYPE_DISTANCE)
-                .setName("Arijeet Saha")
+                .setName("Rohan Gupta")
                 .build();
         responseObserver.onNext(student);
         responseObserver.onCompleted();

@@ -11,17 +11,17 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public Student getStudentDetails(String studentId) {
         Address address = new Address();
-        address.setAddressLine1("A-82 Sector 2C");
-        address.setAddressLine2("Bidhannagar");
-        address.setCity("Durgapur");
+        address.setAddressLine1("A-508 Embassy Golf Club");
+        address.setAddressLine2("Marathahalli");
+        address.setCity("Bengaluru");
         address.setCountry("India");
-        address.setPinCode(713212);
+        address.setPinCode(560200);
 
         Student student = new Student();
         student.setId(studentId);
         student.setAddress(address);
         student.setStudentType(StudentType.STUDENT_TYPE_DISTANCE);
-        student.setName("Arijeet Saha");
+        student.setName("Rohan Gupta");
 
         return student;
     }

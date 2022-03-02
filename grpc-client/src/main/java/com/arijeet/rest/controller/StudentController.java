@@ -13,7 +13,7 @@ import com.arijeet.rest.service.StudentRestClientService;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/v1")
 public class StudentController {
 
     @Autowired
@@ -22,12 +22,12 @@ public class StudentController {
     @Autowired
     private StudentRestClientService studentRestClientService;
 
-    @GetMapping("/grpc/{id}")
+    @GetMapping("/grpc/students/{id}")
     public Mono<StudentResource> getGrpcStudentById(@PathVariable("id") String studentId) {
         return Mono.justOrEmpty(studentGrpcClientService.getStudentDetails(studentId));
     }
 
-    @GetMapping("/rest/{id}")
+    @GetMapping("/rest/students/{id}")
     public Mono<StudentResource> getRestStudentById(@PathVariable("id") String studentId) {
         return studentRestClientService.getStudentDetails(studentId);
     }
