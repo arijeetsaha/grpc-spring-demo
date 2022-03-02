@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package common;
+
+option java_multiple_files = true;
+option java_package = "com.arijeet.grpc.proto";
+option java_outer_classname = "AddressProto";
+
+message Address {
+    string address_line1 = 1;
+    string address_line2 = 2;
+    string city = 3;
+    int32 pin_code = 4;
+    string state = 5;
+    string country = 6;
+}

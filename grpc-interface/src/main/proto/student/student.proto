@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package student;
+
+import "common/address.proto";
+
+option java_multiple_files = true;
+option java_package = "com.arijeet.grpc.proto";
+option java_outer_classname = "StudentProto";
+
+message Student {
+    string student_id = 1;
+    string name = 2;
+    common.Address address = 3;
+    StudentType student_type = 4;
+}
+
+enum StudentType {
+    STUDENT_TYPE_LOCAL = 0;
+    STUDENT_TYPE_DISTANCE = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "student/student.proto";
+
+option java_multiple_files = true;
+option java_package = "com.arijeet.grpc.proto";
+option java_outer_classname = "StudentServiceProto";
+
+service StudentService {
+    rpc GetStudentDetails(StudentSearchRequest) returns ( student.Student ){
+    }
+}
+
+message StudentSearchRequest {
+    string student_id = 1;
+}
+
